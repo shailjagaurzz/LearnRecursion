@@ -1,10 +1,22 @@
-Recursion is defined as a process which calls itself directly or indirectly and the corresponding function is called a recursive function.
+#include <iostream>
+using namespace std;
 
-Properties of Recursion:
+// Function to add two numbers using recursion
+int recursiveAdd(int a, int b) {
+    // Base case: if b is 0, return a (since adding 0 doesn't change the value)
+    if (b == 0) {
+        return a;
+    } else {
+        // Recursive case: increment a and decrement b
+        return recursiveAdd(a + 1, b - 1);
+    }
+}
 
-Recursion has some important properties. Some of which are mentioned below:
+int main() {
+    int num1, num2;
 
-The primary property of recursion is the ability to solve a problem by breaking it down into smaller sub-problems, each of which can be solved in the same way.
-A recursive function must have a base case or stopping criteria to avoid infinite recursion.
-Recursion involves calling the same function within itself, which leads to a call stack.
-Recursive functions may be less efficient than iterative solutions in terms of memory and performance.
+    // Prompt user for input
+    cout << "Enter two integers to add: ";
+    cin >> num1 >> num2;
+
+    // Call the recursive addition function and display the result
